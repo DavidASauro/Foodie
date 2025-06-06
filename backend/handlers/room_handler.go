@@ -19,7 +19,6 @@ func CreateRoomHandler(c *gin.Context){
 	room := models.NewRoom(roomCode)
 	models.RoomStore[roomCode] = room
 	c.JSON(http.StatusOK, gin.H{"room_code":roomCode})
-	
 }
 
 func JoinRoomHandler(c *gin.Context){
