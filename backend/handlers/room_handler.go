@@ -9,8 +9,8 @@ import (
 )
 
 type JoinRequest struct{
-	Code string `json:"room_code"`
-	Username string `json:"username"`
+	Code string `json:"room_code" binding:"required"`
+	Username string `json:"username" binding:"required"`
 }
 
 
