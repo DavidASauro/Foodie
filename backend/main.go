@@ -1,14 +1,13 @@
 package main
 
 import (
-	"backend/config"
 	"backend/routes"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	config.ConnectDB()
+	//config.ConnectDB()
 
 	r := gin.Default()
 

@@ -19,9 +19,9 @@ func GenerateCode() string {
 		if _,exists := models.RoomStore[string(code)]; !exists {
 			return string(code)
 		}
-	}
-	
+	}	
 }
+
 // loralei is the bestest :)
 
 func ParseGeoJSONCategories(path string) (map[string][]*geojson.Feature, error) {

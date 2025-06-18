@@ -11,5 +11,6 @@ func CreateRoomRoutes(router *gin.Engine){
 	{
 		roomGroup.POST("/createRoom", handlers.CreateRoomHandler)
 		roomGroup.POST("/join", handlers.JoinRoomHandler)
+		roomGroup.GET("/status/:roomCode", handlers.GetRoomStatusHandler)
 	}
 }
