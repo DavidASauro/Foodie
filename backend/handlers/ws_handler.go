@@ -18,7 +18,7 @@ var upgrader = websocket.Upgrader{
 }
 
 func HandleWebSocket(c *gin.Context){
-	roomCode := c.Param("room_code")
+	roomCode := c.Param("roomCode")
 	conn, err := upgrader.Upgrade(c.Writer,c.Request,nil)
 	if err != nil{
 		log.Println(err)
@@ -35,20 +35,8 @@ func HandleWebSocket(c *gin.Context){
 
 	room.Connections[conn] = true
 
-	userID := c.Query("userID") // or wherever you’re getting it from
-	room.Users[userID] = true
-
-	// Check if enough users have joined to move to Step 2
-	if room.CurrentStep == 1 && len(room.Users) == room.ExpectedUserCount {
-		room.CurrentStep = 2
-		room.ProgressState = make(map[string]bool)
-		for conn := range room.Connections {
-			conn.WriteJSON(map[string]interface{}{
-				"type": "stepAdvanced",
-				"step": room.CurrentStep,
-			})
-		}
-	}
+	username := c.Query("username")
+	room.Users[username] = true
 
 	defer func() {
 		delete(room.Connections, conn)
@@ -67,13 +55,30 @@ func HandleWebSocket(c *gin.Context){
 		if !ok {
 			log.Println("invalid message type")
 		}
-		userID, ok := msg["userID"].(string)
+		username, ok := msg["username"].(string)
 		if !ok {
-			log.Println("Invalid userID in message")
+			log.Println("Invalid username in message")
 
 		}
 
 		switch msgType {
+			case "ready":
+				if room.CurrentStep != 1 {
+					log.Println("Unexpected 'ready' at step", room.CurrentStep)
+					break
+				}
+				room.ProgressState[username] = true
+
+				if len(room.ProgressState) == room.ExpectedUserCount {
+					room.CurrentStep = 2
+					room.ProgressState = make(map[string]bool)
+					for conn := range room.Connections {
+						conn.WriteJSON(map[string]interface{}{
+							"type": "stepAdvanced",
+							"step": room.CurrentStep,
+						})
+					}
+				}
 			case "preferences":
 				if room.CurrentStep != 2 {
 					log.Println("Invalid step: got preferences at step", room.CurrentStep)
@@ -90,8 +95,8 @@ func HandleWebSocket(c *gin.Context){
 						prefs[key] = strVal
 					}
 				}
-				room.Preferences[userID] = prefs
-				handleStepCompleted(room, userID)
+				room.Preferences[username] = prefs
+				handleStepCompleted(room, username)
 			case "votes":
 				if room.CurrentStep != 3 {
 					log.Println("Invalid step: got voting at step", room.CurrentStep)
@@ -108,8 +113,8 @@ func HandleWebSocket(c *gin.Context){
 						parsedVotes[placeID] = voted
 					}
 				}
-				room.Votes[userID] = parsedVotes
-				handleStepCompleted(room, userID)
+				room.Votes[username] = parsedVotes
+				handleStepCompleted(room, username)
 			case "results":
 				results := models.GetUnanimousVotes(room)
 				conn.WriteJSON(map[string]interface{}{
@@ -117,10 +122,10 @@ func HandleWebSocket(c *gin.Context){
 					"results": results,
 				})
 			case "stepCompleted":
-				handleStepCompleted(room, userID)
+				handleStepCompleted(room, username)
 		}
 
-		if msgType != "preferences" && msgType != "voting" && msgType != "stepCompleted" {
+		if msgType != "preferences" && msgType != "votes" && msgType != "stepCompleted" && msgType != "results" && msgType != "ready" {
 			for other := range room.Connections {
 				if other != conn {
 					if err := other.WriteJSON(msg); err != nil {

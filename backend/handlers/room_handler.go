@@ -9,7 +9,7 @@ import (
 )
 
 type JoinRequest struct{
-	Code string `json:"room_code" binding:"required"`
+	Code string `json:"roomCode" binding:"required"`
 	Username string `json:"username" binding:"required"`
 }
 
@@ -26,7 +26,7 @@ func CreateRoomHandler(c *gin.Context){
 	room := models.NewRoom(roomCode)
 	room.Users[req.Username] = true
 	models.RoomStore[roomCode] = room
-	c.JSON(http.StatusOK, gin.H{"room_code":roomCode})
+	c.JSON(http.StatusOK, gin.H{"roomCode":roomCode})
 }
 
 func JoinRoomHandler(c *gin.Context){
@@ -43,7 +43,7 @@ func JoinRoomHandler(c *gin.Context){
 	}
 
 	room.Users[joinReq.Username] = true
-	c.JSON(http.StatusOK, gin.H{"message": "joined room successfully", "room_code": room.RoomCode, "users": room.Users})
+	c.JSON(http.StatusOK, gin.H{"message": "joined room successfully", "roomCode": room.RoomCode, "users": room.Users})
 }
 
 func GetRoomStatusHandler(c *gin.Context){
@@ -56,8 +56,9 @@ func GetRoomStatusHandler(c *gin.Context){
 
 	numOfPeopleInRoom := len(room.Users)
 	c.JSON(http.StatusOK, gin.H{
-		"room_code": room.RoomCode,
+		"roomCode": room.RoomCode,
 		"users": room.Users,
 		"ready": numOfPeopleInRoom == room.ExpectedUserCount,
+		"readyToConnect": numOfPeopleInRoom == room.ExpectedUserCount,
 	})
 }

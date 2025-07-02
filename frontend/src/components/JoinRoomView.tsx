@@ -1,6 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
+import { wsClient } from "../manager/websocket";
 
 type Props = {
   onBack: () => void;
@@ -23,7 +24,7 @@ const JoinRoomView = ({ onBack, setCurrentView }: Props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ room_code: roomCode, username: username }),
+      body: JSON.stringify({ roomCode: roomCode, username: username }),
     });
     if (!res.ok) {
       throw new Error("Failed to join room");
@@ -33,9 +34,12 @@ const JoinRoomView = ({ onBack, setCurrentView }: Props) => {
 
   const { mutate: joinRoomMutation } = useMutation({
     mutationFn: joinRoom,
-    onSuccess: (data) => {
+    onSuccess: () => {
+      localStorage.setItem("username", username);
+      localStorage.setItem("roomCode", roomCode);
+      wsClient.connect(roomCode, username);
       setCurrentView("preferences");
-      console.log("Joined room with ID:", data.status);
+      console.log("Joined room with ID:", roomCode);
     },
   });
 
@@ -59,7 +63,10 @@ const JoinRoomView = ({ onBack, setCurrentView }: Props) => {
         />
       </Box>
       <Button onClick={onBack}>Back</Button>
-      <Button onClick={() => joinRoomMutation({ roomCode, username })}>
+      <Button
+        onClick={() => joinRoomMutation({ roomCode, username })}
+        disabled={!username || !roomCode}
+      >
         Join
       </Button>
     </Box>

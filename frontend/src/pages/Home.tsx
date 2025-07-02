@@ -10,10 +10,10 @@ const Home = () => {
   const [currentView, setCurrentView] = useState<
     "home" | "create" | "join" | "preferences"
   >("home");
-  const [roomCode, setRoomCode] = useState<string>("");
+
   const createRoom = async (
     username: string
-  ): Promise<{ room_code: string }> => {
+  ): Promise<{ roomCode: string }> => {
     const res = await fetch("http://localhost:8080/api/room/createRoom", {
       method: "POST",
       headers: {
@@ -30,10 +30,11 @@ const Home = () => {
 
   const { mutate: createRoomMutation } = useMutation({
     mutationFn: createRoom,
-    onSuccess: (data) => {
-      setRoomCode(data.room_code);
+    onSuccess: (data, variables) => {
+      localStorage.setItem("roomCode", data.roomCode);
+      localStorage.setItem("username", variables);
       setCurrentView("create");
-      console.log("Room created with ID:", data.room_code);
+      console.log("Room created with ID:", data.roomCode);
     },
   });
 
@@ -45,8 +46,9 @@ const Home = () => {
         return (
           <CreateRoomView
             onBack={() => setCurrentView("home")}
-            roomCode={roomCode}
+            roomCode={localStorage.getItem("roomCode") || ""}
             setCurrentView={setCurrentView}
+            username={localStorage.getItem("username") || ""}
           />
         );
       case "join":
