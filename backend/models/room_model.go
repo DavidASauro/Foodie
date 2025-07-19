@@ -66,3 +66,24 @@ func GetUnanimousVotes(room *Room) []string {
 
 	return unanimousVotes
 }
+
+// Collect all selected cuisines from all users in the room
+func CollectRoomPreferences(room *Room) []string {
+    cuisineSet := make(map[string]struct{})
+
+    for _, userPrefs := range room.Preferences {
+        for cuisine, selected := range userPrefs {
+            if selected {
+                cuisineSet[cuisine] = struct{}{}
+            }
+        }
+    }
+
+    cuisines := make([]string, 0, len(cuisineSet))
+    for cuisine := range cuisineSet {
+        cuisines = append(cuisines, cuisine)
+    }
+
+    return cuisines
+}
+

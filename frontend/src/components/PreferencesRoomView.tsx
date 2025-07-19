@@ -4,79 +4,93 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { Button, FormControl, FormLabel } from "@mui/material";
 import Box from "@mui/material/Box";
 import { wsClient } from "../manager/websocket";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+type Message = {
+  type: string;
+  username?: string;
+  step?: number;
+  message?: string;
+};
 
 const PreferencesRoomView = () => {
+  const [cuisines, setCuisines] = useState<Record<string, string[]>>({});
+  const [preferences, setPreferences] = useState<Record<string, boolean>>({});
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/cuisines")
+      .then((res) => res.json())
+      .then((data: { cuisineTypes: Record<string, string[]> }) => {
+        setCuisines(data.cuisineTypes);
+        const initialPrefs: Record<string, boolean> = {};
+        Object.values(data.cuisineTypes)
+          .flat()
+          .forEach((cuisine: string) => {
+            initialPrefs[cuisine] = false;
+          });
+        setPreferences(initialPrefs);
+      });
+  }, []);
+
+  const handleCheckboxChange =
+    (key: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setPreferences((prev) => ({
+        ...prev,
+        [key]: event.target.checked,
+      }));
+    };
+
+  const handleSubmit = () => {
+    wsClient.send({
+      type: "preferences",
+      username: localStorage.getItem("username"),
+      roomCode: localStorage.getItem("roomCode"),
+      preferences: preferences,
+    });
+  };
+
+  useEffect(() => {
+    const listener = (msg: Message) => {
+      if (msg.type === "stepAdvanced" && msg.step === 3) {
+        navigate("/voting");
+      }
+    };
+
+    wsClient.addMessageListener(listener);
+
+    return () => {
+      wsClient.removeMessageListener(listener);
+    };
+  }, [navigate]);
+
   return (
-    <Box>
-      <Box sx={{ display: "flex", flexDirection: "row" }}>
-        <FormControl sx={{ marginRight: 10 }}>
-          <FormLabel component="legend">Location Rating</FormLabel>
-          <FormGroup>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="1 star"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="2 star"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="3 star"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="4 star"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="5 star"
-            ></FormControlLabel>
-          </FormGroup>
-        </FormControl>
-        <FormControl sx={{ marginLeft: 5 }}>
-          <FormLabel component="legend">Ethnic Origin</FormLabel>
-          <FormGroup>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Asian"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="European"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Middle Eastern & Mediterranean"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="South Asian"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Latin American"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Caribbean & Creole"
-            ></FormControlLabel>
-            <FormControlLabel
-              control={<Checkbox />}
-              label="North American"
-            ></FormControlLabel>
-          </FormGroup>
-        </FormControl>
-      </Box>
-      <Button
-        onClick={() =>
-          wsClient.send({
-            Message: "NEXT",
-            User: localStorage.getItem("username"),
-          })
-        }
-      >
-        Next
+    <Box sx={{ padding: 2 }}>
+      <FormControl sx={{ marginLeft: 5 }}>
+        <FormLabel component="legend">Cuisine Preferences</FormLabel>
+        <FormGroup>
+          {Object.entries(cuisines).map(([category, cuisinesInCategory]) => (
+            <Box key={category} sx={{ marginBottom: 2 }}>
+              <FormLabel>{category}</FormLabel>
+              {cuisinesInCategory.map((cuisine) => (
+                <FormControlLabel
+                  key={cuisine}
+                  control={
+                    <Checkbox
+                      checked={preferences[cuisine] || false}
+                      onChange={handleCheckboxChange(cuisine)}
+                    />
+                  }
+                  label={cuisine}
+                />
+              ))}
+            </Box>
+          ))}
+        </FormGroup>
+      </FormControl>
+      <Button variant="contained" onClick={handleSubmit} sx={{ marginTop: 2 }}>
+        Submit Preferences
       </Button>
     </Box>
   );

@@ -1,5 +1,13 @@
+type Message = {
+  type: string;
+  username?: string;
+  step?: number;
+  message?: string;
+};
+
 class WSClient {
   private socket: WebSocket | null = null;
+  private onMessageListeners: ((data: Message) => void)[] = [];
 
   connect(roomCode: string, username: string) {
     if (
@@ -23,6 +31,7 @@ class WSClient {
     this.socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
       console.log("WebSocket message:", data);
+      this.onMessageListeners.forEach((listener) => listener(data));
     };
 
     this.socket.onerror = (error) => console.error("WebSocket error:", error);
@@ -30,9 +39,18 @@ class WSClient {
     this.socket.onclose = () => {
       localStorage.removeItem("roomCode");
       localStorage.removeItem("username");
-
       console.log("WebSocket closed");
     };
+  }
+
+  addMessageListener(listener: (data: Message) => void) {
+    this.onMessageListeners.push(listener);
+  }
+
+  removeMessageListener(listener: (data: Message) => void) {
+    this.onMessageListeners = this.onMessageListeners.filter(
+      (l) => l !== listener
+    );
   }
 
   send(data: object) {

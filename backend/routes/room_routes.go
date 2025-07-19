@@ -12,5 +12,12 @@ func CreateRoomRoutes(router *gin.Engine){
 		roomGroup.POST("/createRoom", handlers.CreateRoomHandler)
 		roomGroup.POST("/join", handlers.JoinRoomHandler)
 		roomGroup.GET("/status/:roomCode", handlers.GetRoomStatusHandler)
+		
 	}
+}
+
+func RegisterRoomRoutes(router *gin.Engine){
+	router.GET("/api/cuisines", handlers.GetCuisineTypesHandler)
+	router.POST("/api/restaurants", handlers.GetRestaurantsBasedOnRoomPreferences)
+	router.POST("/api/votes/send", handlers.SubmitVoteHandler)
 }

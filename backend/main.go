@@ -26,6 +26,7 @@ func main() {
 	//Adding routes
 	routes.CreateRoomRoutes(r)
 	routes.RegisterWebSocketRoutes(r)
+	routes.RegisterRoomRoutes(r)
 
 	r.Run(":8080")
 }

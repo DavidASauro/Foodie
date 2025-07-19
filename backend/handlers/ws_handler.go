@@ -102,18 +102,6 @@ func HandleWebSocket(c *gin.Context){
 					log.Println("Invalid step: got voting at step", room.CurrentStep)
 					continue
 				}
-				rawVotes, ok := msg["votes"].(map[string]interface{})
-				if !ok{
-					log.Println("Invalid votes message format")
-					continue
-				}
-				parsedVotes := make(map[string]bool)
-				for placeID, val := range rawVotes{
-					if voted, ok := val.(bool); ok{
-						parsedVotes[placeID] = voted
-					}
-				}
-				room.Votes[username] = parsedVotes
 				handleStepCompleted(room, username)
 			case "results":
 				results := models.GetUnanimousVotes(room)
@@ -125,7 +113,7 @@ func HandleWebSocket(c *gin.Context){
 				handleStepCompleted(room, username)
 		}
 
-		if msgType != "preferences" && msgType != "votes" && msgType != "stepCompleted" && msgType != "results" && msgType != "ready" {
+		if msgType != "preferences" && msgType != "votes" && msgType != "stepCompleted" && msgType != "results" && msgType != "ready" && msgType != "details" {
 			for other := range room.Connections {
 				if other != conn {
 					if err := other.WriteJSON(msg); err != nil {
@@ -161,7 +149,8 @@ func handleStepCompleted(room *models.Room, userID string){
 		for conn := range room.Connections{
 			conn.WriteJSON(map[string]interface{}{
 				"type": "stepAdvanced",
-				"message": "All users completed step " + strconv.Itoa(room.CurrentStep),
+				"step": room.CurrentStep,
+				"message": "All users completed step " + strconv.Itoa(room.CurrentStep - 1),
 			})
 		}
 	}
