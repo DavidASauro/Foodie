@@ -20,4 +20,5 @@ func RegisterRoomRoutes(router *gin.Engine){
 	router.GET("/api/cuisines", handlers.GetCuisineTypesHandler)
 	router.POST("/api/restaurants", handlers.GetRestaurantsBasedOnRoomPreferences)
 	router.POST("/api/votes/send", handlers.SubmitVoteHandler)
+	router.GET("/api/votes/:roomCode", handlers.GetCommonRoomRestaurantVotes)
 }

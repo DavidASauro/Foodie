@@ -7,7 +7,7 @@ import (
 type Room struct  {
 	RoomCode string
 	Users map[string]bool
-	Votes map[string]map[string]bool
+	Votes map[string]map[string]bool 
 	Preferences map[string]map[string]bool
 	Connections map[*websocket.Conn]bool
 	ProgressState map[string]bool

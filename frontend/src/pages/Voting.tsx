@@ -69,11 +69,11 @@ const Voting = () => {
 
   const handleVote = () => {
     const currentRestaurant = restaurants[currentIndex];
-
-    setVotes((prev) => ({
-      ...prev,
+    const nextVotes = {
+      ...votes,
       [currentRestaurant.name]: true,
-    }));
+    };
+    setVotes(nextVotes);
 
     //All restaurants have been voted on
     if (currentIndex + 1 >= restaurants.length) {
@@ -85,7 +85,7 @@ const Voting = () => {
         body: JSON.stringify({
           roomCode: localStorage.getItem("roomCode"),
           username: localStorage.getItem("username"),
-          votes,
+          nextVotes,
         }),
       }).then(() => {
         wsClient.send({

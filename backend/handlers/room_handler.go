@@ -20,7 +20,7 @@ type PreferencesRequest struct {
 type VoteRequest struct {
     RoomCode string            `json:"roomCode"`
     Username string            `json:"username"`
-    Votes    map[string]bool    `json:"votes"` // Restaurant name to yes/no
+    Votes    map[string]bool    `json:"nextVotes"` // Restaurant name to yes/no
 }
 
 
@@ -130,6 +130,51 @@ func GetRestaurantsBasedOnRoomPreferences(c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{"restaurants": response})
+}
+
+func GetCommonRoomRestaurantVotes(c *gin.Context){
+	roomCode := c.Param("roomCode")
+	room, exits := models.RoomStore[roomCode]
+	if !exits {
+		c.JSON(http.StatusNotFound, gin.H{"error": "room not found"})
+		return
+	}
+	if room.Votes == nil {
+		c.JSON(http.StatusOK, gin.H{"message": "no votes yet"})
+		return
+	}
+
+	commonVotes := map[string]bool{}
+	first := true
+	for _, votes := range room.Votes{
+		currentUserVotes := map[string]bool{}
+		for restaurant, vote := range votes{
+			if vote{
+				currentUserVotes[restaurant] = true
+			}
+		}
+		if first {
+			for k := range currentUserVotes {
+                commonVotes[k] = true
+            }
+			first = false
+		}else{
+			var toRemove []string
+			for k := range commonVotes {
+				if !currentUserVotes[k] {
+					toRemove = append(toRemove,k)
+				}
+			}
+			for _, k := range toRemove {
+				delete(commonVotes, k)
+			}
+		}
+	}
+	results := []string{}
+	for restaurant := range commonVotes {
+		results = append(results, restaurant)
+	}
+	c.JSON(http.StatusOK, gin.H{"commonVotes": results})
 }
 
 func SubmitVoteHandler(c *gin.Context){
