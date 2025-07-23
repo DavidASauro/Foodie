@@ -149,7 +149,7 @@ func GetCommonRoomRestaurantVotes(c *gin.Context){
 	for _, votes := range room.Votes{
 		currentUserVotes := map[string]bool{}
 		for restaurant, vote := range votes{
-			if vote{
+			if vote {
 				currentUserVotes[restaurant] = true
 			}
 		}

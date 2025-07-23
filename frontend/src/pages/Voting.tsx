@@ -67,11 +67,11 @@ const Voting = () => {
       });
   }, []);
 
-  const handleVote = () => {
+  const handleVote = (vote: boolean) => {
     const currentRestaurant = restaurants[currentIndex];
     const nextVotes = {
       ...votes,
-      [currentRestaurant.name]: true,
+      [currentRestaurant.name]: vote,
     };
     setVotes(nextVotes);
 
@@ -163,7 +163,7 @@ const Voting = () => {
             variant="outlined"
             color="error"
             startIcon={<ClearIcon />}
-            onClick={() => handleVote()}
+            onClick={() => handleVote(false)}
           >
             No
           </Button>
@@ -171,7 +171,7 @@ const Voting = () => {
             variant="contained"
             color="success"
             startIcon={<CheckIcon />}
-            onClick={() => handleVote()}
+            onClick={() => handleVote(true)}
           >
             Yes
           </Button>
