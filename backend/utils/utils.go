@@ -95,55 +95,56 @@ func GetUniqueCuisineTypes(categorizedFeatures map[string][]*geojson.Feature) []
 
 func GroupCuisinesByCategory(uniqueCuisines []string) map[string][]string {
     cuisineCategories := map[string]string{
-        // Asian
-        "chinese": "Asian", "japanese": "Asian", "thai": "Asian", "korean": "Asian",
-        "vietnamese": "Asian", "sushi": "Asian", "dumplings": "Asian", "ramen": "Asian",
-        "poke": "Asian", "indian": "Asian", "pakistani": "Asian", "malaysian": "Asian",
-        "taiwanese": "Asian", "hawaiian": "Asian", "filipino": "Asian", "indonesian": "Asian",
-        "lao": "Asian", "cambodian": "Asian", "bangladeshi": "Asian", "south_indian": "Asian",
-        "peshawari": "Asian", "tibetan": "Asian", "nepalese": "Asian", "asian": "Asian",
-        "cantonese": "Asian", "sichuan": "Asian", "noodle": "Asian", "noodles": "Asian",
-        "dim_sum": "Asian", "banh_mi": "Asian", "hotpot": "Asian",
+    
+    // Asian        
+    "chinese": "Asian", "sushi": "Asian", "thai": "Asian", "korean": "Asian",
+	"vietnamese": "Asian", "japanese": "Asian", "noodles": "Asian", "dumplings": "Asian",
+	"ramen": "Asian", "indian": "Asian", "tibetan": "Asian", "nepalese": "Asian",
+	"filipino": "Asian", "poke": "Asian", "bangladeshi": "Asian", "cantonese": "Asian",
+	"malaysian": "Asian", "indonesian": "Asian", "asian": "Asian", "lao": "Asian",
+	"taiwanese": "Asian", "peshawari": "Asian", "hawaiian": "Asian",
 
-        // European
-        "french": "European", "italian": "European", "greek": "European", "german": "European",
-        "spanish": "European", "polish": "European", "british": "European", "belgian": "European",
-        "breton": "European", "hungarian": "European", "romanian": "European", "russian": "European",
-        "swiss": "European", "bavarian": "European", "georgian": "European", "ukrainian": "European",
-        "portuguese": "European", "italian_pizza": "European", "greek_fried_chiken": "European",
-        "european": "European",
+	// European
+	"french": "European", "italian": "European", "pizza": "European", "greek": "European", "german": "European",
+	"british": "European", "spanish": "European", "russian": "European", "belgian": "European",
+	"swiss": "European", "ukrainian": "European", "polish": "European", "portuguese": "European",
+	"hungarian": "European", "georgian": "European", "bavarian": "European", "breton": "European",
+	"european": "European", "romanian": "European",
 
-        // Middle Eastern
-        "lebanese": "Middle Eastern", "turkish": "Middle Eastern", "persian": "Middle Eastern",
-        "syrian": "Middle Eastern", "israeli": "Middle Eastern", "afghan": "Middle Eastern",
-        "arab": "Middle Eastern", "middle_eastern": "Middle Eastern", "shawarma": "Middle Eastern",
-        "kebab": "Middle Eastern", "falafel": "Middle Eastern", "couscous": "Middle Eastern",
-        "yemeni": "Middle Eastern",
+	// Middle Eastern
+	"lebanese": "Middle Eastern", "turkish": "Middle Eastern", "persian": "Middle Eastern",
+	"israeli": "Middle Eastern", "syrian": "Middle Eastern", "yemeni": "Middle Eastern",
+	"arab": "Middle Eastern", "shawarma": "Middle Eastern", "falafel": "Middle Eastern",
+	"kebab": "Middle Eastern", "afghan": "Middle Eastern", "couscous": "Middle Eastern",
+	"middle_eastern": "Middle Eastern",
 
-        // North American
-        "american": "North American", "canadian": "North American", "southern": "North American",
-        "barbecue": "North American", "burger": "North American", "poutine": "North American",
-        "quebecois": "North American", "local": "North American", "regional": "North American",
+	// North American
+	"american": "North American", "canadian": "North American", "southern": "North American",
+	"burger": "North American", "barbecue": "North American", "poutine": "North American",
+	"quebecois": "North American", "fried_food": "North American", "local": "North American",
+	"regional": "North American",
 
-        // Latin American
-        "mexican": "Latin American", "brazilian": "Latin American", "peruvian": "Latin American",
-        "cuban": "Latin American", "argentinian": "Latin American", "venezuelan": "Latin American",
-        "arepa": "Latin American", "columbian": "Latin American", "venezulean": "Latin American",
-        "chilean": "Latin American", "latin_american": "Latin American",
-        "jamaican": "Latin American", "haitian": "Latin American", "salvadoran": "Latin American",
-        "pupusa": "Latin American", "empanada": "Latin American", "tacos": "Latin American",
-        "taqueria": "Latin American", "tex-mex": "Latin American",
+	// Latin American / Caribbean
+	"mexican": "Latin American", "brazilian": "Latin American", "argentinian": "Latin American",
+	"cuban": "Latin American", "peruvian": "Latin American", "colombian": "Latin American",
+	"venezuelan": "Latin American", "chilean": "Latin American", "jamaican": "Latin American",
+	"haitian": "Latin American", "salvadoran": "Latin American", "pupusa": "Latin American",
+	"empanada": "Latin American", "tacos": "Latin American", "taqueria": "Latin American",
+	"tex-mex": "Latin American", "arepa": "Latin American", "latin_american": "Latin American",
 
-        // African
-        "ethiopian": "African", "caribbean": "African", "creole": "African",
-        "african": "African", "algerian": "African", "moroccan": "African", "tunisian": "African",
-        "senegalese": "African", "somali": "African", "north_african": "African", "mauritian": "African",
+	// African
+	"ethiopian": "African", "senegalese": "African", "somali": "African",
+	"north_african": "African", "algerian": "African", "moroccan": "African",
+	"tunisian": "African", "caribbean": "African", "mauritian": "African",
+	"african": "African", "creole": "African",
 
-        // Other / General
-        "fusion": "Fusion", "international": "Fusion", "comfort": "Other", "fine_dining": "Other",
-        "brunch": "Other", "breakfast": "Other", "lunch": "Other", "supper": "Other",
-        "organic": "Other", "salad": "Other", "soup": "Other", "smoked_salmon": "Other",
-        "potato": "Other", "potatoes": "Other",
+	// Other / General
+	//"chicken": "Other", "fusion": "Other", "international": "Other",
+	//"comfort": "Other", "fine_dining": "Other", "brunch": "Other", "breakfast": "Other",
+	//"lunch": "Other", "supper": "Other", "salad": "Other", "organic": "Other",
+	//"soup": "Other", "smoked_salmon": "Other", "fried": "Other",
+
+    
     }
 
     grouped := make(map[string][]string)

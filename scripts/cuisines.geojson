@@ -1,8 +1,5 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-turbo",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2025-07-23T21:28:42Z",
   "features": [
     {
       "type": "Feature",
@@ -41,7 +38,7 @@
         "amenity": "restaurant",
         "building": "yes",
         "building:colour": "brown",
-        "cuisine": "fried_food",
+        "cuisine": "fried food",
         "delivery": "yes",
         "indoor_seating": "yes",
         "name": "Deli Plus",
@@ -1046,7 +1043,7 @@
         "@id": "way/784343218",
         "amenity": "restaurant",
         "building": "yes",
-        "cuisine": "hot_dog",
+        "cuisine": "hot dog",
         "name": "Chez Ma Tante",
         "@geometry": "center"
       },
@@ -1185,7 +1182,7 @@
         "addr:street": "Rue Bélanger",
         "amenity": "restaurant",
         "check_date": "2024-10-04",
-        "cuisine": "fine_dining",
+        "cuisine": "fine dining",
         "indoor_seating": "yes",
         "name": "Chez Jean-Paul",
         "opening_hours": "We-Sa 17:30-22:30",
@@ -1270,7 +1267,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Clark",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "name": "L'Étagère Gourmande",
         "opening_hours": "Mo-Fr 08:00-19:00; Sa-Su 10:00-19:00",
         "phone": "+1-514-962-8134",
@@ -1788,7 +1785,7 @@
         "addr:street": "Boulevard Décarie",
         "amenity": "restaurant",
         "building": "retail",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Lefalafel",
         "@geometry": "center"
       },
@@ -2190,7 +2187,7 @@
         "addr:street": "Rue Ontario Est",
         "addr:suburb": "Mercier-Hochelaga-Maisonneuve",
         "amenity": "restaurant",
-        "cuisine": "fine_dining",
+        "cuisine": "fine dining",
         "diet:vegetarian": "yes",
         "indoor_seating": "yes",
         "internet_access": "wlan",
@@ -2540,7 +2537,7 @@
         "addr:street": "Rue Sainte-Catherine Ouest",
         "amenity": "restaurant",
         "automatic_door": "no",
-        "cuisine": "bubble_tea",
+        "cuisine": "bubble tea",
         "door": "hinged",
         "entrance": "yes",
         "name": "Ocha Bubble Tea",
@@ -2562,7 +2559,7 @@
         "addr:housenumber": "1221",
         "addr:street": "Boulevard René-Lévesque Ouest",
         "amenity": "restaurant",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "internet_access": "wlan",
         "name": "Bier Markt Montreal",
         "opening_hours": "Mo-We 11:30-24:00, Th 11:30-02:00, Fr,Sa 11:30-03:00, Su 11:30-24:00",
@@ -3056,7 +3053,7 @@
       "properties": {
         "@id": "node/1302772216",
         "amenity": "restaurant",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Vargas",
         "wheelchair": "yes"
       },
@@ -3082,7 +3079,7 @@
         "branch": "Place Ville Marie",
         "brand": "The Keg",
         "brand:wikidata": "Q7744066",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "indoor_seating": "yes",
         "name": "The Keg",
         "opening_hours": "Mo-We 10:00-24:00, Tu-Fr 11:00-01:00, Sa 16:00-01:00, Su 16:00-24:00",
@@ -3131,7 +3128,7 @@
         "addr:suburb": "Le Plateau-Mont-Royal",
         "amenity": "restaurant",
         "check_date": "2023-08-04",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "internet_access": "wlan",
         "internet_access:fee": "no",
         "internet_access:operator": "Île Sans Fil",
@@ -3631,7 +3628,7 @@
         "addr:street": "Rue Hutchison",
         "amenity": "restaurant",
         "check_date": "2024-10-17",
-        "cuisine": "mediterranean;middle_eastern",
+        "cuisine": "mediterranean;middle eastern",
         "name": "Rumi",
         "phone": "+1 514 490 1999",
         "website": "https://www.restaurantrumi.com/"
@@ -4157,7 +4154,7 @@
         "addr:housenumber": "2523",
         "addr:street": "Rue Notre-Dame Ouest",
         "amenity": "restaurant",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Mignon"
       },
       "geometry": {
@@ -4410,7 +4407,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Sherbrooke Ouest",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Boustan"
       },
       "geometry": {
@@ -4612,7 +4609,7 @@
         "addr:province": "Québec",
         "addr:street": "Rue Jarry Est",
         "amenity": "restaurant",
-        "cuisine": "fast_food;breakfast",
+        "cuisine": "fast food;breakfast",
         "delivery": "yes",
         "indoor_seating": "yes",
         "name": "Restaurant Québec Déli",
@@ -4687,7 +4684,7 @@
         "amenity": "restaurant",
         "brewery": "yes;brewery=hill_farmstead",
         "check_date": "2022-12-30",
-        "cuisine": "european;fine_dining",
+        "cuisine": "european;fine dining",
         "indoor_seating": "yes",
         "name": "Lawrence",
         "opening_hours": "Th-Sa 18:00-22:00",
@@ -5021,7 +5018,7 @@
       "properties": {
         "@id": "node/2249203901",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "name": "L'entre-pot",
         "opening_hours": "Mo-Su 08:00-18:00+",
         "wheelchair": "no"
@@ -5688,7 +5685,7 @@
         "addr:street": "Rue Ontario Est",
         "amenity": "restaurant",
         "check_date": "2024-06-28",
-        "cuisine": "mediterranean;middle_eastern",
+        "cuisine": "mediterranean;middle eastern",
         "diet:vegetarian": "yes",
         "level": "0",
         "name": "Les délices Sirar",
@@ -7817,7 +7814,7 @@
         "addr:province": "Québec",
         "addr:street": "Chemin de la Côte-des-Neiges",
         "amenity": "restaurant",
-        "cuisine": "mediterranean;middle_eastern",
+        "cuisine": "mediterranean;middle eastern",
         "level": "1",
         "name": "Al-Manar"
       },
@@ -7863,7 +7860,7 @@
         "addr:province": "Québec",
         "addr:street": "Chemin de la Côte-des-Neiges",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "name": "Brûlerie Urbaine",
         "wheelchair": "yes"
       },
@@ -8035,7 +8032,7 @@
         "addr:housename": "Café Larue & fils",
         "addr:postcode": "H2R 1P6",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "internet_access": "wlan",
         "name": "Café Larue & fils",
         "opening_hours": "7:00-19:00"
@@ -8797,7 +8794,7 @@
         "addr:street": "Boulevard Marcel-Laurin",
         "amenity": "restaurant",
         "capacity": "100",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Restaurant Au Vieux Duluth",
         "phone": "+1-514-745-4525",
         "smoking": "no",
@@ -9304,7 +9301,7 @@
         "addr:street": "Rue Saint-Paul Est",
         "amenity": "restaurant",
         "capacity": "300",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Vieux-Port Steakhouse",
         "phone": "+1 514-866-3175",
         "smoking": "no",
@@ -9333,7 +9330,7 @@
         "brand": "The Keg",
         "brand:wikidata": "Q7744066",
         "brand:wikipedia": "en:The Keg",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "The Keg",
         "phone": "+1-514-871-9093",
         "website": "https://thekeg.com/en/locations/old-montreal",
@@ -9360,7 +9357,7 @@
         "addr:street": "Rue Saint-Paul Ouest",
         "amenity": "restaurant",
         "capacity": "150",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Méchant Boeuf Bar & Brasserie",
         "phone": "+1 514-788-4020",
         "smoking": "no",
@@ -9624,7 +9621,7 @@
         "addr:province": "Québec",
         "addr:street": "Boulevard Newman",
         "amenity": "restaurant",
-        "cuisine": "chinese;dim_sum",
+        "cuisine": "chinese;dim sum",
         "name": "Chez Ping"
       },
       "geometry": {
@@ -10138,7 +10135,7 @@
         "air_conditioning": "no",
         "amenity": "restaurant",
         "check_date": "2023-08-11",
-        "cuisine": "ice_cream",
+        "cuisine": "ice cream",
         "internet_access": "no",
         "name": "Péché Glacé",
         "opening_hours": "Mo-Sa 09:00-18:30; Su 10:00-18:30",
@@ -10315,7 +10312,7 @@
         "amenity": "restaurant",
         "check_date": "2024-05-14",
         "contact:phone": "+1-514-523-3670",
-        "cuisine": "sandwich;hot_dog;souvlaki;pizza;breakfast",
+        "cuisine": "sandwich;hot dog;souvlaki;pizza;breakfast",
         "delivery": "yes",
         "diet:vegetarian": "yes",
         "internet_access": "wlan",
@@ -10382,7 +10379,7 @@
         "branch": "Mont-Royal",
         "check_date": "2024-05-14",
         "contact:phone": "+1-514-528-6361",
-        "cuisine": "bagel;sandwich;coffee_shop",
+        "cuisine": "bagel;sandwich;coffee shop",
         "diet:vegetarian": "yes",
         "name": "St-Viateur Bagel et Café",
         "opening_hours": "Mo-Su 07:00-20:00",
@@ -10413,7 +10410,7 @@
         "air_conditioning": "yes",
         "amenity": "restaurant",
         "check_date": "2025-07-01",
-        "cuisine": "chinese;bubble_tea",
+        "cuisine": "chinese;bubble tea",
         "delivery": "yes",
         "diet:vegetarian": "yes",
         "name": "Frères",
@@ -10480,7 +10477,7 @@
         "addr:province": "Quebec",
         "addr:street": "Avenue du Parc",
         "amenity": "restaurant",
-        "cuisine": "italian_pizza;pasta;pizza",
+        "cuisine": "italian pizza;pasta;pizza",
         "name": "Alto Restaurant",
         "opening_hours": "Su-Th 11:00-16:00; Fr,Sa 11:00-17:00",
         "website": "https://altorestaurant.ca"
@@ -10872,7 +10869,7 @@
       "properties": {
         "@id": "node/4060358153",
         "amenity": "restaurant",
-        "cuisine": "mongolian_grill",
+        "cuisine": "mongolian grill",
         "name": "Egina",
         "opening_hours": "We-Su 17:00-24:00"
       },
@@ -11248,7 +11245,7 @@
         "addr:street": "Avenue du Parc",
         "amenity": "restaurant",
         "check_date": "2024-10-17",
-        "cuisine": "lebanese;mediterranean;middle_eastern",
+        "cuisine": "lebanese;mediterranean;middle eastern",
         "diet:vegetarian": "yes",
         "name": "Aux Lilas",
         "phone": "+1 514 271 1453",
@@ -11553,7 +11550,7 @@
         "addr:housenumber": "1602",
         "addr:street": "Avenue Laurier Est",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop;international",
+        "cuisine": "coffee shop;international",
         "name": "Antipode",
         "phone": "+15145247044",
         "website": "https://www.antipodemtl.com/"
@@ -11599,7 +11596,7 @@
       "properties": {
         "@id": "node/4297304091",
         "amenity": "restaurant",
-        "cuisine": "ice_cream",
+        "cuisine": "ice cream",
         "name": "Havre aux glaces",
         "note": "Summer only"
       },
@@ -13051,7 +13048,7 @@
         "addr:street": "Rue Guy",
         "amenity": "restaurant",
         "automatic_door": "no",
-        "cuisine": "korean_fried_chicken",
+        "cuisine": "korean fried chicken",
         "name": "COQCOR",
         "opening_hours": "12:00-22:00",
         "wheelchair": "no"
@@ -13274,7 +13271,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Ontario Est",
         "amenity": "restaurant",
-        "cuisine": "breakfast;sandwich;fine_dining",
+        "cuisine": "breakfast;sandwich;fine dining",
         "diet:vegetarian": "yes",
         "indoor_seating": "yes",
         "name": "Bagatelle Bistro",
@@ -14053,7 +14050,7 @@
         "addr:street": "Boulevard Saint-Laurent",
         "amenity": "restaurant",
         "check_date": "2023-08-06",
-        "cuisine": "burger;hot_dog",
+        "cuisine": "burger;hot dog",
         "indoor_seating": "yes",
         "level": "0",
         "name": "Dirty Dogs",
@@ -14210,7 +14207,7 @@
         "addr:postcode": "H1V 1K4",
         "addr:street": "Rue Ontario Est",
         "amenity": "restaurant",
-        "cuisine": "fine_dining",
+        "cuisine": "fine dining",
         "indoor_seating": "yes",
         "name": "Hélicoptère",
         "opening_hours": "We-Su 17:30-22:30",
@@ -14952,7 +14949,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Drolet",
         "amenity": "restaurant",
-        "cuisine": "burger;regional;hot_dog",
+        "cuisine": "burger;regional;hot dog",
         "name": "Chez Tousignant",
         "opening_hours": "Tu-Su 11:30-22:00",
         "phone": "+1 438 3866368",
@@ -15570,7 +15567,7 @@
         "addr:street": "Place d'Youville",
         "air_conditioning": "yes",
         "amenity": "restaurant",
-        "cuisine": "french;steak_house;seafood",
+        "cuisine": "french;steak house;seafood",
         "name": "Gibbys",
         "opening_hours:covid19": "off",
         "outdoor_seating": "no",
@@ -16271,7 +16268,7 @@
         "addr:street": "Avenue du Mont-Royal Est",
         "amenity": "restaurant",
         "check_date": "2023-09-06",
-        "cuisine": "syrian;middle_eastern;falafel",
+        "cuisine": "syrian;middle eastern;falafel",
         "diet:vegan": "only",
         "name": "Sham",
         "opening_hours": "We-Su 10:00-20:00",
@@ -16640,7 +16637,7 @@
         "addr:street": "Avenue du Parc",
         "amenity": "restaurant",
         "check_date": "2024-10-17",
-        "cuisine": "bubble_tea",
+        "cuisine": "bubble tea",
         "name": "Palgong Tea",
         "outdoor_seating": "yes",
         "wheelchair": "no"
@@ -17795,7 +17792,7 @@
         "@id": "node/6419749788",
         "addr:street": "Rue Sherbrooke Ouest",
         "amenity": "restaurant",
-        "cuisine": "pizza;italian;italian_pizza",
+        "cuisine": "pizza;italian;italian pizza",
         "name": "Melrose"
       },
       "geometry": {
@@ -17959,7 +17956,7 @@
       "properties": {
         "@id": "node/6699496089",
         "amenity": "restaurant",
-        "cuisine": "pizza;chicken;fried_chicken;italian",
+        "cuisine": "pizza;chicken;fried chicken;italian",
         "name": "Pizza Et Poulet Express"
       },
       "geometry": {
@@ -18841,7 +18838,7 @@
         "addr:street": "Boulevard Robert-Bourassa",
         "air_conditioning": "yes",
         "amenity": "restaurant",
-        "cuisine": "asian;fusion;taiwanese;bubble_tea;tea",
+        "cuisine": "asian;fusion;taiwanese;bubble tea;tea",
         "delivery": "yes",
         "email": "lemajesthe@gmail.com",
         "internet_access": "wlan",
@@ -18983,7 +18980,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Fleury Ouest",
         "amenity": "restaurant",
-        "cuisine": "latin_american",
+        "cuisine": "latin american",
         "name": "Madre - Fleury Ouest",
         "outdoor_seating": "no"
       },
@@ -20677,7 +20674,7 @@
         "addr:street": "Avenue Duluth Est",
         "amenity": "restaurant",
         "check_date": "2024-06-18",
-        "cuisine": "algerian;north_african;couscous",
+        "cuisine": "algerian;north african;couscous",
         "name": "Au Coin Berbère",
         "opening_hours": "Mo off; Tu-Th 16:30-22:00; Fr-Sa 16:30-23:00; Su 16:30-22:00",
         "phone": "+1 514 844 7405",
@@ -20748,7 +20745,7 @@
         "addr:province": "Québec",
         "addr:street": "Avenue Lacombe",
         "amenity": "restaurant",
-        "cuisine": "sandwich;vietnamese;banh_mi",
+        "cuisine": "sandwich;vietnamese;banh mi",
         "level": "-1",
         "name": "Sandwicherie Viet"
       },
@@ -21804,7 +21801,7 @@
         "addr:province": "Québec",
         "addr:street": "Chemin Queen Mary",
         "amenity": "restaurant",
-        "cuisine": "smoked_salmon",
+        "cuisine": "smoked salmon",
         "name": "Solomos"
       },
       "geometry": {
@@ -22038,7 +22035,7 @@
         "addr:province": "QC",
         "addr:street": "Boulevard Décarie",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "name": "Le Ritz"
       },
       "geometry": {
@@ -22276,7 +22273,7 @@
         "addr:street": "Rue de Verdun",
         "amenity": "restaurant",
         "check_date": "2025-07-19",
-        "cuisine": "coffee_shop;breakfast",
+        "cuisine": "coffee shop;breakfast",
         "internet_access": "wlan",
         "internet_access:fee": "customers",
         "name": "La Base",
@@ -22436,7 +22433,7 @@
         "bar": "yes",
         "brand": "La Cage",
         "brand:wikidata": "Q3206980",
-        "cuisine": "burger;steak_house;american",
+        "cuisine": "burger;steak house;american",
         "name": "La Cage",
         "website": "https://www.cage.ca/decarie"
       },
@@ -22849,7 +22846,7 @@
         "addr:housenumber": "1437",
         "addr:street": "Boulevard René-Lévesque Ouest",
         "amenity": "restaurant",
-        "cuisine": "indian;south_indian",
+        "cuisine": "indian;south indian",
         "name": "Notre Endroit",
         "name:en": "Our Place",
         "name:fr": "Notre Endroit",
@@ -22933,7 +22930,7 @@
         "addr:housenumber": "152",
         "addr:street": "Avenue Mozart Est",
         "amenity": "restaurant",
-        "cuisine": "mediterranean;middle_eastern;syrian",
+        "cuisine": "mediterranean;middle eastern;syrian",
         "diet:vegan": "only",
         "name": "Sham",
         "opening_hours": "Tu-Sa 19:00-20:45; Su 10:00-18:45",
@@ -23577,7 +23574,7 @@
         "air_conditioning": "no",
         "amenity": "restaurant",
         "bar": "yes",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "diet:lactose_free": "yes",
         "name": "Doremi",
         "opening_hours": "Mo-Su 09:00-21:00",
@@ -23832,7 +23829,7 @@
         "addr:street": "Rue Saint-Denis",
         "amenity": "restaurant",
         "check_date": "2024-06-22",
-        "cuisine": "waffle;juice;ice_cream",
+        "cuisine": "waffle;juice;ice cream",
         "name": "Mix'Heure",
         "outdoor_seating": "yes",
         "phone": "+1 514 487 2131",
@@ -24215,7 +24212,7 @@
         "addr:street": "Rue Masson",
         "amenity": "restaurant",
         "check_date": "2024-08-14",
-        "cuisine": "sushi;poke;bubble_tea",
+        "cuisine": "sushi;poke;bubble tea",
         "level": "0",
         "name": "Sushi Ryo",
         "opening_hours": "Mo-We 11:00-21:00; Th-Fr 11:00-21:30; Sa 16:00-21:30",
@@ -24363,7 +24360,7 @@
         "amenity": "restaurant",
         "branch": "Montréal",
         "check_date": "2024-08-03",
-        "cuisine": "sushi;bubble_tea",
+        "cuisine": "sushi;bubble tea",
         "level": "-1",
         "name": "Oh, mon sushi!",
         "opening_hours": "Mo off; Tu,Sa-Su 16:00-21:00; We-Fr 11:00-21:00",
@@ -25354,7 +25351,7 @@
         "@id": "node/11146503934",
         "amenity": "restaurant",
         "check_date": "2024-10-16",
-        "cuisine": "portuguese;bar_and_grill",
+        "cuisine": "portuguese;bar and grill",
         "name": "Mile End Grill",
         "outdoor_seating": "yes",
         "wheelchair": "no"
@@ -25428,7 +25425,7 @@
         "addr:housenumber": "4669",
         "addr:street": "Rue Saint-Denis",
         "amenity": "restaurant",
-        "cuisine": "yemeni;middle_eastern",
+        "cuisine": "yemeni;middle eastern",
         "diet:vegan": "yes",
         "diet:vegetarian": "yes",
         "name": "Mazbi",
@@ -25594,7 +25591,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Notre-Dame Ouest",
         "amenity": "restaurant",
-        "cuisine": "ice_cream",
+        "cuisine": "ice cream",
         "name": "La Diperie"
       },
       "geometry": {
@@ -25639,7 +25636,7 @@
         "addr:province": "Quebec",
         "addr:street": "Rue Suzanne-Coallier",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop",
+        "cuisine": "coffee shop",
         "description": "Aisle 24 was founded in 2015 with a vision toward automated grocery vending, inspired by advances in automation, technology and payment systems.",
         "name": "Aisle 24",
         "opening_hours": "24/7",
@@ -26435,7 +26432,7 @@
       "properties": {
         "@id": "node/11244840476",
         "amenity": "restaurant",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Mignon"
       },
       "geometry": {
@@ -26799,7 +26796,7 @@
         "amenity": "restaurant",
         "contact:facebook": "latoilemtl",
         "contact:instagram": "restaurantlatoile",
-        "cuisine": "italian_pizza",
+        "cuisine": "italian pizza",
         "diet:vegetarian": "yes",
         "email": "restaurantlatoile@outlook.com",
         "internet_access": "wlan",
@@ -26855,7 +26852,7 @@
         "amenity": "restaurant",
         "contact:facebook": "SunnysDinette",
         "contact:instagram": "sunnysdinette",
-        "cuisine": "bagel;breakfast;coffee_shop;pancake",
+        "cuisine": "bagel;breakfast;coffee shop;pancake",
         "diet:vegetarian": "yes",
         "level": "0",
         "name": "Sunny’s Dinette",
@@ -27105,7 +27102,7 @@
       "properties": {
         "@id": "node/11266515341",
         "amenity": "restaurant",
-        "cuisine": "steak_house",
+        "cuisine": "steak house",
         "name": "Moishes"
       },
       "geometry": {
@@ -28009,7 +28006,7 @@
       "properties": {
         "@id": "node/11598843918",
         "amenity": "restaurant",
-        "cuisine": "dessert;bubble_tea",
+        "cuisine": "dessert;bubble tea",
         "name": "Hazukido"
       },
       "geometry": {
@@ -28026,7 +28023,7 @@
       "properties": {
         "@id": "node/11602541094",
         "amenity": "restaurant",
-        "cuisine": "burger;hot_dog;breakfast",
+        "cuisine": "burger;hot dog;breakfast",
         "indoor_seating": "yes",
         "name": "Chevalier Blanc",
         "opening_hours": "Mo-Sa 08:00-23:00",
@@ -28161,7 +28158,7 @@
         "addr:street": "Rue Wellington",
         "amenity": "restaurant",
         "check_date": "2024-08-18",
-        "cuisine": "dumplings;bubble_tea;asian",
+        "cuisine": "dumplings;bubble tea;asian",
         "diet:vegetarian": "yes",
         "name": "Monsieur Dumpling",
         "opening_hours": "Mo 16:15-20:40; Tu-Th 11:15-20:40; Fr 16:15-20:50; Sa-Su 11:15-20:40",
@@ -29221,7 +29218,7 @@
         "addr:street": "Rue Bélanger",
         "amenity": "restaurant",
         "check_date": "2024-10-04",
-        "cuisine": "latin_american",
+        "cuisine": "latin american",
         "name": "Cabañas",
         "wheelchair": "no"
       },
@@ -29489,7 +29486,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Sainte-Catherine Est",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "indoor_seating": "yes",
         "name": "Le Grotte du Couscoussiere",
         "outdoor_seating": "yes"
@@ -30266,7 +30263,7 @@
         "addr:street": "Rue Saint-Denis",
         "amenity": "restaurant",
         "check_date": "2025-05-26",
-        "cuisine": "thai;thai_cuisine",
+        "cuisine": "thai;thai cuisine",
         "diet:gluten_free": "yes",
         "diet:vegetarian": "yes",
         "level": "2",
@@ -30481,7 +30478,7 @@
         "amenity": "restaurant",
         "bar": "yes",
         "check_date": "2024-06-22",
-        "cuisine": "italian;coffee_shop;pizza;sandwich",
+        "cuisine": "italian;coffee shop;pizza;sandwich",
         "diet:vegan": "no",
         "diet:vegetarian": "yes",
         "level": "-1",
@@ -30509,7 +30506,7 @@
         "addr:street": "Rue Saint-Denis",
         "amenity": "restaurant",
         "check_date": "2024-06-22",
-        "cuisine": "vietnamese;bubble_tea",
+        "cuisine": "vietnamese;bubble tea",
         "diet:vegetarian": "yes",
         "name": "La Petite Dînette",
         "opening_hours": "Mo-Tu 11:00-21:00; We off; Th-Fr 11:00-21:00; Sa 12:00-21:00; Su 13:00-20:00",
@@ -30560,7 +30557,7 @@
         "addr:street": "Rue Saint-Denis",
         "amenity": "restaurant",
         "check_date": "2024-06-22",
-        "cuisine": "mexican;latin_american",
+        "cuisine": "mexican;latin american",
         "delivery": "yes",
         "diet:vegetarian": "yes",
         "name": "El Garrobo",
@@ -30939,7 +30936,7 @@
         "addr:unit": "101",
         "air_conditioning": "yes",
         "amenity": "restaurant",
-        "cuisine": "empanada;coffee_shop",
+        "cuisine": "empanada;coffee shop",
         "diet:gluten_free": "yes",
         "diet:vegetarian": "yes",
         "name": "D'Maïs: Empanadas",
@@ -31412,7 +31409,7 @@
         "addr:street": "Rue Wellington",
         "amenity": "restaurant",
         "check_date": "2024-08-15",
-        "cuisine": "vietnamese;bubble_tea",
+        "cuisine": "vietnamese;bubble tea",
         "delivery": "yes",
         "diet:vegetarian": "yes",
         "name": "Viet Express",
@@ -31541,7 +31538,7 @@
         "addr:street": "Rue Beaubien Est",
         "amenity": "restaurant",
         "check_date": "2024-07-29",
-        "cuisine": "latin_american",
+        "cuisine": "latin american",
         "diet:vegan": "no",
         "diet:vegetarian": "no",
         "name": "Santiago",
@@ -32114,7 +32111,7 @@
       "properties": {
         "@id": "node/12115955820",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Les Delices d'Aden"
       },
       "geometry": {
@@ -32395,7 +32392,7 @@
         "addr:province": "Québec",
         "addr:street": "Rue Guy",
         "amenity": "restaurant",
-        "cuisine": "greek_fried_chiken",
+        "cuisine": "greek fried chiken",
         "name": "sparta chicken",
         "opening_hours": "13:00-3:00",
         "phone": "5149707970"
@@ -32734,7 +32731,7 @@
       "properties": {
         "@id": "node/12194830595",
         "amenity": "restaurant",
-        "cuisine": "latin_american",
+        "cuisine": "latin american",
         "name": "Sabrosa"
       },
       "geometry": {
@@ -33147,7 +33144,7 @@
         "addr:street": "Rue Bélanger",
         "alt_name": "Mar y Tierra",
         "amenity": "restaurant",
-        "cuisine": "latin_american",
+        "cuisine": "latin american",
         "name": "Mar & Tierra",
         "opening_hours": "Mo-Th 12:00-01:00; Fr 12:00-03:00; Sa-Su 12:00-01:00",
         "phone": "+1 438 922 2117",
@@ -33236,7 +33233,7 @@
         "addr:street": "Rue Bélanger",
         "amenity": "restaurant",
         "check_date": "2024-10-04",
-        "cuisine": "cuban;latin_american",
+        "cuisine": "cuban;latin american",
         "name": "Le gout authentique de Cuba",
         "wheelchair": "no"
       },
@@ -33254,7 +33251,7 @@
       "properties": {
         "@id": "node/12223116921",
         "amenity": "restaurant",
-        "cuisine": "latin_american",
+        "cuisine": "latin american",
         "name": "Andes",
         "phone": "+1 514 277 5949",
         "wheelchair": "no"
@@ -33441,7 +33438,7 @@
         "@id": "node/12253460803",
         "amenity": "restaurant",
         "check_date": "2024-10-15",
-        "cuisine": "sushi;bubble_tea",
+        "cuisine": "sushi;bubble tea",
         "wheelchair": "no"
       },
       "geometry": {
@@ -33487,7 +33484,7 @@
         "addr:unit": "101",
         "alt_name": "Garbanzo Bar à Houmous",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern;falafel",
+        "cuisine": "middle eastern;falafel",
         "diet:vegan": "only",
         "diet:vegetarian": "yes",
         "name": "G. Bar à Houmous",
@@ -33513,7 +33510,7 @@
         "addr:street": "Rue Saint-Viateur Ouest",
         "amenity": "restaurant",
         "check_date": "2024-10-16",
-        "cuisine": "poke;bubble_tea",
+        "cuisine": "poke;bubble tea",
         "name": "Poké Island",
         "wheelchair": "no"
       },
@@ -33582,7 +33579,7 @@
         "addr:unit": "A",
         "amenity": "restaurant",
         "check_date": "2024-10-17",
-        "cuisine": "lebanese;middle_eastern",
+        "cuisine": "lebanese;middle eastern",
         "indoor_seating": "yes",
         "level": "-1",
         "live_music": "yes",
@@ -33968,7 +33965,7 @@
       "properties": {
         "@id": "node/12380995275",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Kebeh Kabab"
       },
       "geometry": {
@@ -34036,7 +34033,7 @@
       "properties": {
         "@id": "node/12381036370",
         "amenity": "restaurant",
-        "cuisine": "burger;hot_dog;sandwich",
+        "cuisine": "burger;hot dog;sandwich",
         "name": "Notre-Boeuf-De-Grâce"
       },
       "geometry": {
@@ -34053,7 +34050,7 @@
       "properties": {
         "@id": "node/12381036371",
         "amenity": "restaurant",
-        "cuisine": "coffee_shop;brunch;breakfast",
+        "cuisine": "coffee shop;brunch;breakfast",
         "name": "Pigeon Café"
       },
       "geometry": {
@@ -34275,7 +34272,7 @@
       "properties": {
         "@id": "node/12382860410",
         "amenity": "restaurant",
-        "cuisine": "ice_cream",
+        "cuisine": "ice cream",
         "name": "La Diperie Decarie"
       },
       "geometry": {
@@ -34446,7 +34443,7 @@
       "properties": {
         "@id": "node/12383443218",
         "amenity": "restaurant",
-        "cuisine": "bubble_tea;taiwanese",
+        "cuisine": "bubble tea;taiwanese",
         "name": "One Babo"
       },
       "geometry": {
@@ -34498,7 +34495,7 @@
       "properties": {
         "@id": "node/12383443223",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Nara Resto Lounge"
       },
       "geometry": {
@@ -34549,7 +34546,7 @@
       "properties": {
         "@id": "node/12383506296",
         "amenity": "restaurant",
-        "cuisine": "taiwanese;bubble_tea",
+        "cuisine": "taiwanese;bubble tea",
         "name": "Frite & Bulle"
       },
       "geometry": {
@@ -34651,7 +34648,7 @@
       "properties": {
         "@id": "node/12383584408",
         "amenity": "restaurant",
-        "cuisine": "pizza;burger;hot_dog;italian",
+        "cuisine": "pizza;burger;hot dog;italian",
         "name": "Restaurant Lo Dico Pizzeria"
       },
       "geometry": {
@@ -34908,7 +34905,7 @@
       "properties": {
         "@id": "node/12510214404",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Restaurant Rosana"
       },
       "geometry": {
@@ -34942,7 +34939,7 @@
       "properties": {
         "@id": "node/12510214409",
         "amenity": "restaurant",
-        "cuisine": "middle_eastern",
+        "cuisine": "middle eastern",
         "name": "Be Falafel"
       },
       "geometry": {
@@ -35068,7 +35065,7 @@
       "properties": {
         "@id": "node/12675425011",
         "amenity": "restaurant",
-        "cuisine": "burger;hot_dog;fries",
+        "cuisine": "burger;hot dog;fries",
         "name": "Restaurant Lafleur"
       },
       "geometry": {
@@ -35085,7 +35082,7 @@
       "properties": {
         "@id": "node/12675425018",
         "amenity": "restaurant",
-        "cuisine": "breakfast;burger;hot_dog;sandwich;fries",
+        "cuisine": "breakfast;burger;hot dog;sandwich;fries",
         "name": "Restaurant Jumbos"
       },
       "geometry": {
@@ -35606,7 +35603,7 @@
       "properties": {
         "@id": "node/12808949053",
         "amenity": "restaurant",
-        "cuisine": "burger;hot_dog;sandwich;chicken;fries;salad",
+        "cuisine": "burger;hot dog;sandwich;chicken;fries;salad",
         "name": "B12 Burger Acadie"
       },
       "geometry": {
@@ -35691,7 +35688,7 @@
       "properties": {
         "@id": "node/12810941016",
         "amenity": "restaurant",
-        "cuisine": "burger;hot_dog;sandwich;chicken;fries;salad",
+        "cuisine": "burger;hot dog;sandwich;chicken;fries;salad",
         "name": "Jonnyboy"
       },
       "geometry": {
@@ -35842,7 +35839,7 @@
         "addr:street": "Rue Sainte-Catherine Ouest",
         "amenity": "restaurant",
         "check_date": "2025-07-09",
-        "cuisine": "salad;burger;breakfast;coffee_shop;soup",
+        "cuisine": "salad;burger;breakfast;coffee shop;soup",
         "diet:vegan": "only",
         "level": "-1",
         "name": "Copper Branch",
@@ -35872,7 +35869,7 @@
         "addr:province": "QC",
         "addr:street": "Rue Wellington",
         "amenity": "restaurant",
-        "cuisine": "poke;bubble_tea",
+        "cuisine": "poke;bubble tea",
         "name": "Poke Monster",
         "website": "https://pokemonster.com/"
       },
