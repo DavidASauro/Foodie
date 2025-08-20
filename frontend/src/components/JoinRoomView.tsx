@@ -62,13 +62,19 @@ const JoinRoomView = ({ onBack, setCurrentView }: Props) => {
           onChange={(e) => setRoomCode(e.target.value)}
         />
       </Box>
-      <Button onClick={onBack}>Back</Button>
-      <Button
-        onClick={() => joinRoomMutation({ roomCode, username })}
-        disabled={!username || !roomCode}
-      >
-        Join
-      </Button>
+      <Box sx={{ display: "flex", gap: 4, marginTop: 2 }}>
+        <Button size="large" variant="outlined" onClick={onBack}>
+          Back
+        </Button>
+        <Button
+          size="large"
+          variant="outlined"
+          onClick={() => joinRoomMutation({ roomCode, username })}
+          disabled={!username || !roomCode}
+        >
+          Join
+        </Button>
+      </Box>
     </Box>
   );
 };

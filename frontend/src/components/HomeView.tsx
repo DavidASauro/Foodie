@@ -1,6 +1,5 @@
 import { Box, Button } from "@mui/material";
 import { useState } from "react";
-import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextField from "@mui/material/TextField";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -14,10 +13,10 @@ const HomeView = ({ onCreate, onJoin }: Props) => {
   const [username, setUsername] = useState("");
   return (
     <>
-      <Box sx={{ padding: 4 }}>
+      <Box sx={{ padding: 3, textAlign: "center" }}>
         <h1>FOODIE</h1>
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <TextField
           id="input-with-icon-textfield"
           label="Username"
@@ -35,18 +34,12 @@ const HomeView = ({ onCreate, onJoin }: Props) => {
         <Button
           size="large"
           variant="outlined"
-          endIcon={<AddBoxIcon />}
           onClick={() => onCreate(username)}
           disabled={!username.trim()}
         >
           Create a new room
         </Button>
-        <Button
-          size="large"
-          variant="outlined"
-          endIcon={<AddBoxIcon />}
-          onClick={onJoin}
-        >
+        <Button size="large" variant="outlined" onClick={onJoin}>
           Join a room
         </Button>
       </Box>

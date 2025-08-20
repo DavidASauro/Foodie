@@ -5,6 +5,7 @@ import HomeView from "../components/HomeView";
 import CreateRoomView from "../components/CreateRoomView";
 import JoinRoomView from "../components/JoinRoomView";
 import PreferencesRoomView from "../components/PreferencesRoomView";
+import Canvas from "../components/Canvas";
 
 const Home = () => {
   const [currentView, setCurrentView] = useState<
@@ -61,10 +62,13 @@ const Home = () => {
       case "home":
       default:
         return (
-          <HomeView
-            onCreate={(username) => createRoomMutation(username)}
-            onJoin={() => setCurrentView("join")}
-          />
+          <div>
+            <Canvas />
+            <HomeView
+              onCreate={(username) => createRoomMutation(username)}
+              onJoin={() => setCurrentView("join")}
+            />
+          </div>
         );
     }
   };
@@ -87,6 +91,7 @@ const Home = () => {
           width: "50%",
           boxShadow: 20,
           padding: 4,
+          bgcolor: "card.main",
         }}
       >
         {renderContent()}
