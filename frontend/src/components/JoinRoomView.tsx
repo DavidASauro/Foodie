@@ -2,15 +2,17 @@ import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { wsClient } from "../manager/websocket";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   onBack: () => void;
-  setCurrentView: (view: "home" | "create" | "join" | "preferences") => void;
+  //setCurrentView: (view: "home" | "create" | "join" | "preferences") => void;
 };
 
-const JoinRoomView = ({ onBack, setCurrentView }: Props) => {
+const JoinRoomView = ({ onBack }: Props) => {
   const [roomCode, setRoomCode] = useState("");
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   const joinRoom = async ({
     roomCode,
@@ -38,7 +40,8 @@ const JoinRoomView = ({ onBack, setCurrentView }: Props) => {
       localStorage.setItem("username", username);
       localStorage.setItem("roomCode", roomCode);
       wsClient.connect(roomCode, username);
-      setCurrentView("preferences");
+      //setCurrentView("preferences");
+      navigate("/preferences");
       console.log("Joined room with ID:", roomCode);
     },
   });

@@ -56,7 +56,7 @@ const Home = () => {
         return (
           <JoinRoomView
             onBack={() => setCurrentView("home")}
-            setCurrentView={setCurrentView}
+            //setCurrentView={setCurrentView}
           />
         );
       case "home":

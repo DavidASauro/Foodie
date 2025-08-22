@@ -2,6 +2,7 @@ import { Box, Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import { CircularProgress } from "@mui/material";
 import { wsClient } from "../manager/websocket";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   onBack: () => void;
@@ -17,6 +18,7 @@ const CreateRoomView = ({
   username,
 }: Props) => {
   const [ready, setReady] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,17 +32,21 @@ const CreateRoomView = ({
         })
         .catch((error) => console.error("Error fetching room status:", error));
     }, 2000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [roomCode, username]);
 
   useEffect(() => {
     if (ready && roomCode && username) {
+      console.log("Connecting to WebSocket...");
       localStorage.setItem("username", username);
       localStorage.setItem("roomCode", roomCode);
       wsClient.connect(roomCode, username);
-      setCurrentView("preferences");
+      //setCurrentView("preferences");
+      navigate("/preferences");
     }
-  }, [ready, roomCode, setCurrentView, username]);
+  }, [ready, roomCode, setCurrentView, username, navigate]);
 
   return (
     <Box

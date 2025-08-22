@@ -1,7 +1,7 @@
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import { Button, FormControl, FormLabel } from "@mui/material";
+import { Button, Card, FormControl } from "@mui/material";
 import Box from "@mui/material/Box";
 import { wsClient } from "../manager/websocket";
 import { useEffect, useState } from "react";
@@ -67,31 +67,50 @@ const PreferencesRoomView = () => {
 
   return (
     <Box sx={{ padding: 2 }}>
-      <FormControl sx={{ marginLeft: 5 }}>
-        <FormLabel component="legend">Cuisine Preferences</FormLabel>
+      <FormControl sx={{ marginLeft: 2 }}>
+        <Box sx={{ padding: 3, textAlign: "center" }}>
+          <h1>Cuisine Preferences</h1>
+        </Box>
         <FormGroup>
           {Object.entries(cuisines).map(([category, cuisinesInCategory]) => (
-            <Box key={category} sx={{ marginBottom: 2 }}>
-              <FormLabel>{category}</FormLabel>
-              {cuisinesInCategory.map((cuisine) => (
-                <FormControlLabel
-                  key={cuisine}
-                  control={
-                    <Checkbox
-                      checked={preferences[cuisine] || false}
-                      onChange={handleCheckboxChange(cuisine)}
-                    />
-                  }
-                  label={cuisine}
-                />
-              ))}
-            </Box>
+            <Card sx={{ padding: 2, marginBottom: 2 }} key={category}>
+              <Box key={category} sx={{ marginBottom: 2 }}>
+                <Box sx={{ textAlign: "center" }}>
+                  <h2>{category}</h2>
+                </Box>
+                {cuisinesInCategory.map((cuisine) => (
+                  <FormControlLabel
+                    key={cuisine}
+                    control={
+                      <Checkbox
+                        checked={preferences[cuisine] || false}
+                        onChange={handleCheckboxChange(cuisine)}
+                      />
+                    }
+                    label={cuisine}
+                  />
+                ))}
+              </Box>
+            </Card>
           ))}
         </FormGroup>
       </FormControl>
-      <Button variant="contained" onClick={handleSubmit} sx={{ marginTop: 2 }}>
-        Submit Preferences
-      </Button>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          marginTop: 2,
+        }}
+      >
+        <Button
+          variant="contained"
+          onClick={handleSubmit}
+          sx={{ marginTop: 2 }}
+        >
+          Submit Preferences
+        </Button>
+      </Box>
     </Box>
   );
 };
