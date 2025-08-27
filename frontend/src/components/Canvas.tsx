@@ -57,7 +57,7 @@ const Canvas = () => {
     }
 
     // Initialize a fixed number of falling images
-    const totalImageCount = 2;
+    const totalImageCount = 5;
     let fallingImages: FallingImage[] = [];
     function initializeFallingImages() {
       fallingImages = Array.from(

@@ -40,7 +40,15 @@ func HandleWebSocket(c *gin.Context){
 
 	defer func() {
 		delete(room.Connections, conn)
+		delete(room.Users, username)		
 		conn.Close()
+		log.Printf("Connection closed for user %s in room %s", username, roomCode)
+		for other := range room.Connections{
+			other.WriteJSON(map[string]string{"type":"roomDeleted"})
+			other.Close()
+			delete(room.Connections, other)
+		}
+		delete(models.RoomStore, roomCode)
 	}()
 
 	for{

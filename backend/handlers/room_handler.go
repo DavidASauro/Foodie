@@ -3,6 +3,7 @@ package handlers
 import (
 	"backend/models"
 	"backend/utils"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -54,6 +55,20 @@ func JoinRoomHandler(c *gin.Context){
 
 	room.Users[joinReq.Username] = true
 	c.JSON(http.StatusOK, gin.H{"message": "joined room successfully", "roomCode": room.RoomCode, "users": room.Users})
+}
+
+func DeleteRoomHandler(c *gin.Context){
+	roomCode := c.Param("roomCode")
+	
+	 _, exists := models.RoomStore[roomCode]
+	 if !exists{
+		 c.JSON(http.StatusNotFound, gin.H{"error": "room not found"})
+		 return
+	 }
+	log.Println("Before deletion:", models.RoomStore)
+	delete(models.RoomStore, roomCode)
+	log.Println("After deletion:", models.RoomStore)
+	c.JSON(http.StatusOK, gin.H{"message": roomCode + "deleted successfully"})
 }
 
 func GetRoomStatusHandler(c *gin.Context){

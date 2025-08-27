@@ -46,7 +46,19 @@ const Home = () => {
       case "create":
         return (
           <CreateRoomView
-            onBack={() => setCurrentView("home")}
+            onBack={() => {
+              setCurrentView("home");
+              fetch(
+                `http://localhost:8080/api/room/delete/${localStorage.getItem(
+                  "roomCode"
+                )}`,
+                {
+                  method: "DELETE",
+                }
+              ).catch((error) => console.error("Error deleting room:", error));
+              localStorage.removeItem("roomCode");
+              localStorage.removeItem("username");
+            }}
             roomCode={localStorage.getItem("roomCode") || ""}
             setCurrentView={setCurrentView}
             username={localStorage.getItem("username") || ""}

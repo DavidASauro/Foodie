@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CircularProgress } from "@mui/material";
 import { wsClient } from "../manager/websocket";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +18,7 @@ const CreateRoomView = ({
   username,
 }: Props) => {
   const [ready, setReady] = useState<boolean>(false);
+  const navigatingToPreferences = useRef<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,11 +40,13 @@ const CreateRoomView = ({
 
   useEffect(() => {
     if (ready && roomCode && username) {
+      navigatingToPreferences.current = true;
       console.log("Connecting to WebSocket...");
       localStorage.setItem("username", username);
       localStorage.setItem("roomCode", roomCode);
       wsClient.connect(roomCode, username);
       //setCurrentView("preferences");
+
       navigate("/preferences");
     }
   }, [ready, roomCode, setCurrentView, username, navigate]);
