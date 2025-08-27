@@ -1,7 +1,7 @@
 package main
 
 import (
-	"backend/routes"
+	"github.com/DavidASauro/Foodie/backend/routes"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,11 +1,12 @@
 package handlers
 
 import (
-	"backend/models"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 	"time"
+
+	"github.com/DavidASauro/Foodie/backend/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"

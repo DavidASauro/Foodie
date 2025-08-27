@@ -1,12 +1,13 @@
 package handlers
 
 import (
-	"backend/models"
 	"bytes"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/DavidASauro/Foodie/backend/models"
 
 	"github.com/gin-gonic/gin"
 )

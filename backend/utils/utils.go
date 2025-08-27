@@ -1,11 +1,12 @@
 package utils
 
 import (
-	"backend/models"
 	"math/rand"
 	"os"
 	"sort"
 	"strings"
+
+	"github.com/DavidASauro/Foodie/backend/models"
 
 	geojson "github.com/paulmach/go.geojson"
 )

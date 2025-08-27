@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"backend/models"
 	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/DavidASauro/Foodie/backend/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"

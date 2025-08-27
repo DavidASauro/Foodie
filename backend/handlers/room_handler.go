@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"backend/models"
-	"backend/utils"
 	"log"
 	"net/http"
+
+	"github.com/DavidASauro/Foodie/backend/models"
+	"github.com/DavidASauro/Foodie/backend/utils"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"backend/handlers"
+	"github.com/DavidASauro/Foodie/backend/handlers"
 
 	"github.com/gin-gonic/gin"
 )
