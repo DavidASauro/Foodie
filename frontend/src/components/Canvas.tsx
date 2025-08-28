@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-const imagePaths = ["/fries.jpg", "/guy.jpg"];
+const imagePaths = ["/kiwi.png"];
 
 interface FallingImage {
   img: HTMLImageElement;
@@ -44,25 +44,29 @@ const Canvas = () => {
     });
 
     const imageScale = 0.5;
-    function createFallingImage(): FallingImage {
+    const baseSpeed = 1;
+    const speedScale = 2;
+    function createFallingImage(initialPlacement = false): FallingImage {
       const img = images[Math.floor(Math.random() * images.length)];
+      const yPlacement = initialPlacement
+        ? Math.random() * (window.innerHeight + img.height)
+        : -img.height * imageScale;
       return {
         img,
         x: Math.random() * (window.innerWidth - img.width),
-        y: -img.height * imageScale,
+        y: yPlacement,
         width: img.width * imageScale,
         height: img.height * imageScale,
-        speed: 2 + Math.random() * 2,
+        speed: baseSpeed + Math.random() * speedScale,
       };
     }
 
     // Initialize a fixed number of falling images
-    const totalImageCount = 5;
+    const totalImageCount = 20;
     let fallingImages: FallingImage[] = [];
     function initializeFallingImages() {
-      fallingImages = Array.from(
-        { length: totalImageCount },
-        createFallingImage
+      fallingImages = Array.from({ length: totalImageCount }, () =>
+        createFallingImage(true)
       );
     }
 
@@ -100,7 +104,7 @@ const Canvas = () => {
           clickY <= obj.y + obj.height
         ) {
           console.log("Topmost image clicked, replacing it.");
-          fallingImages[i] = createFallingImage();
+          fallingImages[i] = createFallingImage(false);
           break; // stop after replacing the topmost one
         }
       }

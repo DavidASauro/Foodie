@@ -47,7 +47,7 @@ const JoinRoomView = ({ onBack }: Props) => {
   });
 
   return (
-    <Box sx={{ textAlign: "center" }}>
+    <Box sx={{ padding: 3.5, textAlign: "center" }}>
       <h1>Join Room</h1>
       <TextField
         id="standard-basic"

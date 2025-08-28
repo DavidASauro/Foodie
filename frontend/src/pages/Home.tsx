@@ -75,7 +75,6 @@ const Home = () => {
       default:
         return (
           <div>
-            <Canvas />
             <HomeView
               onCreate={(username) => createRoomMutation(username)}
               onJoin={() => setCurrentView("join")}
@@ -95,6 +94,7 @@ const Home = () => {
         minHeight: "100vh",
       }}
     >
+      <Canvas />
       <Box
         sx={{
           display: "flex",
