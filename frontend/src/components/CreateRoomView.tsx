@@ -1,6 +1,5 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
-import { CircularProgress } from "@mui/material";
 import { wsClient } from "../manager/websocket";
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +19,26 @@ const CreateRoomView = ({
   const [ready, setReady] = useState<boolean>(false);
   const navigatingToPreferences = useRef<boolean>(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Clear room info if this page is reloaded
+    const handleBeforeUnload = () => {
+      const roomCode = localStorage.getItem("roomCode");
+      fetch(`http://localhost:8080/api/room/delete/${roomCode}`, {
+        method: "DELETE",
+        keepalive: true, // allows the request to finish even on unload
+      }).catch((err) => console.error(err));
+
+      localStorage.removeItem("username");
+      localStorage.removeItem("roomCode");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,9 +81,24 @@ const CreateRoomView = ({
         gap: 4,
       }}
     >
-      <h1>Room Code: {roomCode}</h1>
-      {ready ? <p></p> : <CircularProgress />}
-      <Button onClick={onBack}>Close</Button>
+      <Box
+        sx={{
+          textAlign: "center",
+          gap: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h1>Room Code: {roomCode}</h1>
+        {ready ? <p></p> : <CircularProgress color="success" />}
+        <Typography variant="body2" color="textSecondary">
+          Share this code with your friends to join the room.
+        </Typography>
+        <Button size="large" variant="outlined" onClick={onBack}>
+          Close
+        </Button>
+      </Box>
     </Box>
   );
 };

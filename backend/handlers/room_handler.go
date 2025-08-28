@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/DavidASauro/Foodie/backend/models"
@@ -66,9 +65,9 @@ func DeleteRoomHandler(c *gin.Context){
 		 c.JSON(http.StatusNotFound, gin.H{"error": "room not found"})
 		 return
 	 }
-	log.Println("Before deletion:", models.RoomStore)
+	
 	delete(models.RoomStore, roomCode)
-	log.Println("After deletion:", models.RoomStore)
+	
 	c.JSON(http.StatusOK, gin.H{"message": roomCode + "deleted successfully"})
 }
 

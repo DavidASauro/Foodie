@@ -153,7 +153,7 @@ func handleStepCompleted(room *models.Room, userID string){
 
 	if allDone{
 		room.CurrentStep++
-		room.ProgressState = make(map[string]bool)
+		room.ProgressState = make(map[string]bool) // reset for next step
 
 		for conn := range room.Connections{
 			conn.WriteJSON(map[string]interface{}{
@@ -162,5 +162,7 @@ func handleStepCompleted(room *models.Room, userID string){
 				"message": "All users completed step " + strconv.Itoa(room.CurrentStep - 1),
 			})
 		}
+
+		
 	}
 }

@@ -104,6 +104,7 @@ const Home = () => {
           boxShadow: 20,
           padding: 4,
           bgcolor: "card.main",
+          borderRadius: 2,
         }}
       >
         {renderContent()}

@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-const imagePaths = ["/kiwi.png"];
+const imagePaths = ["/kiwi.png", "/strawberry.png", "/blueberry.png"];
 
 interface FallingImage {
   img: HTMLImageElement;
@@ -45,7 +45,7 @@ const Canvas = () => {
 
     const imageScale = 0.5;
     const baseSpeed = 1;
-    const speedScale = 2;
+    const speedScale = 1;
     function createFallingImage(initialPlacement = false): FallingImage {
       const img = images[Math.floor(Math.random() * images.length)];
       const yPlacement = initialPlacement
@@ -62,7 +62,7 @@ const Canvas = () => {
     }
 
     // Initialize a fixed number of falling images
-    const totalImageCount = 20;
+    const totalImageCount = 15;
     let fallingImages: FallingImage[] = [];
     function initializeFallingImages() {
       fallingImages = Array.from({ length: totalImageCount }, () =>
