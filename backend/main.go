@@ -12,7 +12,7 @@ func main() {
     r := gin.Default()
 
     r.Use(cors.New(cors.Config{
-        AllowOrigins:     []string{"https://foodie.pages.dev"}, // frontend URL
+        AllowOrigins:     []string{"https://foooodie.pages.dev"}, // frontend URL
         AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
         AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
         AllowCredentials: true,
