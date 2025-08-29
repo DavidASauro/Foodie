@@ -7,26 +7,16 @@ import {
   Grid,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import { API_URL } from "../config";
 
-/*
-type Restaurant = {
-  name: string;
-  cuisine: string;
-  lat: number;
-  lng: number;
-};
-*/
 const Results = () => {
   const [restaurants, setRestaurants] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:8080/api/votes/${localStorage.getItem("roomCode")}`,
-      {
-        headers: { "Content-Type": "application/json" },
-        method: "GET",
-      }
-    )
+    fetch(`${API_URL}/api/votes/${localStorage.getItem("roomCode")}`, {
+      headers: { "Content-Type": "application/json" },
+      method: "GET",
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Network response was not ok");
         return res.json();

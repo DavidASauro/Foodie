@@ -13,6 +13,7 @@ type Room struct  {
 	ProgressState map[string]bool
 	CurrentStep int
 	ExpectedUserCount int
+	
 }
 
 var RoomStore = make(map[string]*Room)

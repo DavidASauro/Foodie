@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { wsClient } from "../manager/websocket";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 type Props = {
   onBack: () => void;
@@ -21,7 +22,7 @@ const JoinRoomView = ({ onBack }: Props) => {
     roomCode: string;
     username: string;
   }): Promise<{ status: string }> => {
-    const res = await fetch("http://localhost:8080/api/room/join", {
+    const res = await fetch(`${API_URL}/api/room/join`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

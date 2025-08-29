@@ -14,6 +14,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 import { wsClient } from "../manager/websocket";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 type Restaurant = {
   name: string;
@@ -50,17 +51,12 @@ const Voting = () => {
   }, [navigate]);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:8080/api/restaurants?roomCode=${localStorage.getItem(
-        "roomCode"
-      )}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      }
-    )
+    fetch(`${API_URL}/api/restaurants/${localStorage.getItem("roomCode")}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "GET",
+    })
       .then((res) => res.json())
       .then((data) => {
         setRestaurants(data.restaurants);
@@ -77,7 +73,7 @@ const Voting = () => {
 
     //All restaurants have been voted on
     if (currentIndex + 1 >= restaurants.length) {
-      fetch("http://localhost:8080/api/votes/send", {
+      fetch(`${API_URL}/api/votes/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

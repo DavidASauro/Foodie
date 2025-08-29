@@ -2,6 +2,7 @@ import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
 import { wsClient } from "../manager/websocket";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 type Props = {
   onBack: () => void;
@@ -24,7 +25,7 @@ const CreateRoomView = ({
     // Clear room info if this page is reloaded
     const handleBeforeUnload = () => {
       const roomCode = localStorage.getItem("roomCode");
-      fetch(`http://localhost:8080/api/room/delete/${roomCode}`, {
+      fetch(`${API_URL}/api/room/delete/${roomCode}`, {
         method: "DELETE",
         keepalive: true, // allows the request to finish even on unload
       }).catch((err) => console.error(err));
@@ -42,7 +43,7 @@ const CreateRoomView = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch(`http://localhost:8080/api/room/status/${roomCode}`)
+      fetch(`${API_URL}/api/room/status/${roomCode}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.ready && username) {

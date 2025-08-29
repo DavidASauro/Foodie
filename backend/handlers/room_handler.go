@@ -101,7 +101,7 @@ func GetCuisineTypesHandler(c *gin.Context){
 
 
 func GetRestaurantsBasedOnRoomPreferences(c *gin.Context) {
-	roomCode := c.Query("roomCode") // ?roomCode=XXXXXX
+	roomCode := c.Param("roomCode")
 
 	room, exists := models.RoomStore[roomCode]
 	if !exists {

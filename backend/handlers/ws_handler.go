@@ -36,6 +36,8 @@ func HandleWebSocket(c *gin.Context){
 
 	room.Connections[conn] = true
 
+	
+
 	username := c.Query("username")
 	room.Users[username] = true
 
@@ -69,6 +71,8 @@ func HandleWebSocket(c *gin.Context){
 			log.Println("Invalid username in message")
 
 		}
+
+		
 
 		switch msgType {
 			case "ready":

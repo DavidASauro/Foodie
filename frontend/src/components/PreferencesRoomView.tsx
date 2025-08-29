@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import { wsClient } from "../manager/websocket";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 type Message = {
   type: string;
@@ -27,7 +28,10 @@ const PreferencesRoomView = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/cuisines")
+    fetch(`${API_URL}/api/cuisines`, {
+      headers: { "Content-Type": "application/json" },
+      method: "GET",
+    })
       .then((res) => res.json())
       .then((data: { cuisineTypes: Record<string, string[]> }) => {
         setCuisines(data.cuisineTypes);

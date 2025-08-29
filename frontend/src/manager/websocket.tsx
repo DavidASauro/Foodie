@@ -1,3 +1,5 @@
+import { WS_URL } from "../config";
+
 type Message = {
   type: string;
   username?: string;
@@ -20,7 +22,7 @@ class WSClient {
     }
 
     this.socket = new WebSocket(
-      `ws://localhost:8080/api/ws/${roomCode}?username=${username}`
+      `${WS_URL}/api/ws/${roomCode}?username=${username}`
     );
 
     this.socket.onopen = () => {
@@ -36,11 +38,14 @@ class WSClient {
 
     this.socket.onerror = (error) => console.error("WebSocket error:", error);
 
-    this.socket.onclose = () => {
+    const cleanup = () => {
       localStorage.removeItem("roomCode");
       localStorage.removeItem("username");
-      console.log("WebSocket closed");
+      console.log("WebSocket cleaned up");
     };
+
+    this.socket.onclose = () => cleanup();
+    window.addEventListener("beforeunload", cleanup);
   }
 
   addMessageListener(listener: (data: Message) => void) {

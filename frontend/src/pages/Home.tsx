@@ -6,6 +6,7 @@ import CreateRoomView from "../components/CreateRoomView";
 import JoinRoomView from "../components/JoinRoomView";
 import PreferencesRoomView from "../components/PreferencesRoomView";
 import Canvas from "../components/Canvas";
+import { API_URL } from "../config";
 
 const Home = () => {
   const [currentView, setCurrentView] = useState<
@@ -15,7 +16,7 @@ const Home = () => {
   const createRoom = async (
     username: string
   ): Promise<{ roomCode: string }> => {
-    const res = await fetch("http://localhost:8080/api/room/createRoom", {
+    const res = await fetch(`${API_URL}/api/room/createRoom`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +50,7 @@ const Home = () => {
             onBack={() => {
               setCurrentView("home");
               fetch(
-                `http://localhost:8080/api/room/delete/${localStorage.getItem(
+                `${API_URL}/api/room/delete/${localStorage.getItem(
                   "roomCode"
                 )}`,
                 {
