@@ -1,33 +1,29 @@
 package main
 
 import (
-	"github.com/DavidASauro/Foodie/backend/routes"
+	"time"
 
+	"github.com/DavidASauro/Foodie/backend/routes"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	//config.ConnectDB()
+    r := gin.Default()
 
-	r := gin.Default()
+    r.Use(cors.New(cors.Config{
+        AllowOrigins:     []string{"https://foodie.pages.dev"}, // frontend URL
+        AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+        AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+        AllowCredentials: true,
+        MaxAge:           12 * time.Hour,
+    }))
 
-	//CORS middleware
-	r.Use(func(c *gin.Context) {
-        c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-        c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
-        c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-        if c.Request.Method == "OPTIONS" {
-            c.AbortWithStatus(204)
-            return
-        }
-        c.Next()
-    })
+    routes.CreateRoomRoutes(r)
+    routes.RegisterWebSocketRoutes(r)
+    routes.RegisterRoomRoutes(r)
 
-	//Adding routes
-	routes.CreateRoomRoutes(r)
-	routes.RegisterWebSocketRoutes(r)
-	routes.RegisterRoomRoutes(r)
-
-	r.Run(":8080")
+    r.Run(":8080")
 }
+
 
