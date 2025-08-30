@@ -16,7 +16,6 @@ func main() {
         AllowOrigins:     []string{"https://foooodie.pages.dev"}, // frontend URL
         AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
         AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
-        AllowCredentials: true,
         MaxAge:           12 * time.Hour,
     }))
 
