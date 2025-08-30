@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/DavidASauro/Foodie/backend/routes"
@@ -23,7 +24,13 @@ func main() {
     routes.RegisterWebSocketRoutes(r)
     routes.RegisterRoomRoutes(r)
 
-    r.Run(":8080")
+    // Use the Render-provided PORT environment variable if available
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // fallback for local dev
+	}
+
+	r.Run(":" + port)
 }
 
 
