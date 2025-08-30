@@ -14,9 +14,10 @@ import (
 var upgrader = websocket.Upgrader{
 	//Allowing all origins for simplicity, but can be restricted later.
 	CheckOrigin: func(r *http.Request) bool{
-		return true
+		return r.Header.Get("Origin") == "https://foooodie.pages.dev"
 	},
 }
+
 
 func HandleWebSocket(c *gin.Context){
 	roomCode := c.Param("roomCode")

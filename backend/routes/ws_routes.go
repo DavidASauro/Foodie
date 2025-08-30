@@ -7,5 +7,5 @@ import (
 )
 
 func RegisterWebSocketRoutes(router *gin.Engine){
-	router.GET("/api/ws/:roomCode", handlers.HandleWebSocket)
+	router.GET("/ws/:roomCode", handlers.HandleWebSocket)
 }

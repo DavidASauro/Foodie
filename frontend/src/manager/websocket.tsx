@@ -22,7 +22,7 @@ class WSClient {
     }
 
     this.socket = new WebSocket(
-      `${WS_URL}/api/ws/${roomCode}?username=${username}`
+      `${WS_URL}/ws/${roomCode}?username=${username}`
     );
 
     this.socket.onopen = () => {
