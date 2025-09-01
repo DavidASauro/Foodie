@@ -1,4 +1,4 @@
-import { Container, Box } from "@mui/material";
+import { Container, Box, LinearProgress } from "@mui/material";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import HomeView from "../components/HomeView";
@@ -30,7 +30,7 @@ const Home = () => {
     return res.json();
   };
 
-  const { mutate: createRoomMutation } = useMutation({
+  const { mutate: createRoomMutation, status } = useMutation({
     mutationFn: createRoom,
     onSuccess: (data, variables) => {
       localStorage.setItem("roomCode", data.roomCode);
@@ -80,6 +80,12 @@ const Home = () => {
               onCreate={(username) => createRoomMutation(username)}
               onJoin={() => setCurrentView("join")}
             />
+            {status === "pending" ? (
+              <Box sx={{ mt: 2, textAlign: "center" }}>
+                <p>Creating room...</p>
+                <LinearProgress color="success" />
+              </Box>
+            ) : null}
           </div>
         );
     }

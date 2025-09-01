@@ -7,6 +7,7 @@ import {
   Typography,
   Box,
   Divider,
+  LinearProgress,
 } from "@mui/material";
 import RoomIcon from "@mui/icons-material/Room";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
@@ -106,9 +107,35 @@ const Voting = () => {
 
   if (currentIndex >= restaurants.length) {
     return (
-      <Typography sx={{ textAlign: "center", mt: 4 }}>
-        🎉 Thanks for voting! Waiting on others...
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+          textAlign: "center",
+          bgcolor: "background.default",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "50%",
+            maxWidth: 400,
+            boxShadow: 20,
+            padding: 4,
+            bgcolor: "card.main",
+            borderRadius: 2,
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            Votes submitted! Waiting for others...
+          </Typography>
+          <LinearProgress color="success" sx={{ width: "100%", mt: 2 }} />
+        </Box>
+      </Box>
     );
   }
 
